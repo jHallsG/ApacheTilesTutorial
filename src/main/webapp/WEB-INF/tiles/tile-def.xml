@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+  <definition name="parentPage" template="/WEB-INF/views/parent/parent.jsp">
+    <put-attribute name="title" value="WELCOME TO APACHE TILES" />
+    <put-attribute name="header" value="/WEB-INF/views/fragment/header.jsp" />
+    <put-attribute name="menu" value="/WEB-INF/views/fragment/menu.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/views/fragment/footer.jsp" />
+    <put-attribute name="body" value=""/>
+  </definition>
+  
+  <definition name="homePage" extends = "parentPage">
+    <put-attribute name="title" value="Home Page" />
+    <put-attribute name="body" value="/WEB-INF/views/fragment/sub-fragments/menu_home.jsp" />
+  </definition>
+  
+  <definition name="contactUsPage" extends = "parentPage">
+    <put-attribute name="title" value="Contact Us" />
+    <put-attribute name="body" value="/WEB-INF/views/fragment/sub-fragments/contactUs.jsp" />
+  </definition>
+</tiles-definitions>
