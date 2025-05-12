@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- typeAliases are used to map Java classes to a shorter name -->
+	<typeAliases>
+		<typeAlias type="com.apachetiles.entity.UsersEntity" alias="users" />
+	</typeAliases>
+	<!-- in MyBatis, environments contain the database connection. We can have
+		multiple environments. -->
+	<environments default="development">
+		<environment id="development">
+			<!-- transactionManger can be JDBC or Managed -->
+			<!-- JDBC for simple single DB -->
+			<!-- Managed for JTA, Java EE, etc where multiple DB is needed -->
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.cj.jdbc.Driver" />
+				<property name="url"
+					value="jdbc:mysql://localhost:3306/apachetiles" />
+				<property name="username" value="JanH" />
+				<property name="password" value="mineSQL909" />
+			</dataSource>
+		</environment>
+	</environments>
+	<!-- mapper is used to map SQL queries to Java methods -->
+	<mappers>
+		<mapper resource="com/apachetiles/dao/UserMapper.xml" />
+	</mappers>
+</configuration>
